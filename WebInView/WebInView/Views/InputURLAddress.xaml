@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WebInView.Views.InputURLAddress">
+    <ContentPage.Content>
+        <StackLayout Spacing="5" Margin="10,20,10,0">
+            <BoxView HeightRequest="50"/>
+            <Image Source="fronticon.png" HeightRequest="200" WidthRequest="200"/>
+            <Label Text="Please Enter URL"
+                HorizontalOptions="FillAndExpand" />
+            <Entry x:Name="entryURL" 
+
+                Placeholder="Enter URL"
+                   PlaceholderColor="Gray"
+                   HorizontalOptions="FillAndExpand"></Entry>
+            <Button Text="Save URL"
+                    TextColor="White"
+                    BackgroundColor="#ff5864"
+                    Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

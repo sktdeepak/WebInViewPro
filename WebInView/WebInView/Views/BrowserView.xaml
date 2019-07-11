@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             x:Class="WebInView.Views.BrowserView">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                
+                <controls:PullToRefreshLayout
+          IsPullToRefreshEnabled="True"
+          RefreshCommand="{Binding RefreshCommand}"
+          IsRefreshing="{Binding IsRefreshing}"
+          RefreshColor="Blue">
+                    <WebView x:Name="webView" 
+                     Navigated="OnNavigated"
+                     Navigating="OnNavigating"
+                             Source="{Binding URL}"
+                     WidthRequest="1000" HeightRequest="1000" />
+                </controls:PullToRefreshLayout>
+            </StackLayout>
+
+            <Frame AbsoluteLayout.LayoutFlags="PositionProportional"
+                   AbsoluteLayout.LayoutBounds="0.5,0.5,AutoSize,AutoSize"
+                   x:Name="loading"
+                   BackgroundColor="Gray"
+                   Opacity="0.9"
+                   IsVisible="True">
+                <StackLayout>
+                    <ActivityIndicator IsRunning="True"/>
+                    <Label TextColor="White" Text="Loading..."/>
+                </StackLayout>
+            </Frame>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
